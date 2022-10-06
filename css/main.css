@@ -13,24 +13,24 @@
 }
 
 @font-face {
-  font-family: Inter;
-  src: url(../fonts/InterLight.woff2) format("woff2");
+  font-family: "Inter";
+  src: url("../fonts/InterLight.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
   font-style: normal
 }
 
 @font-face {
-  font-family: Inter;
-  src: url(../fonts/InterRegular.woff2) format("woff2");
+  font-family: "Inter";
+  src: url("../fonts/InterRegular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal
 }
 
 @font-face {
-  font-family: Inter;
-  src: url(../fonts/InterMedium.woff2) format("woff2");
+  font-family: "Inter";
+  src: url("../fonts/InterMedium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal
@@ -577,13 +577,6 @@ a {
   margin-bottom: 40px
 }
 
-@media (max-width:576px) {
-  .category__wrapper {
-    max-width: 100%;
-    padding: 0 3px
-  }
-}
-
 .category__cards {
   display: -ms-grid;
   display: grid;
@@ -600,38 +593,55 @@ a {
   }
 }
 
+@media (max-width:576px) {
+  .category__wrapper {
+    max-width: 100%;
+    padding: 0 3px
+  }
+
+  .category__cards {
+    gap: 5px
+  }
+}
+
 .category__card {
   color: var(--light-color);
   background-image: url(../img/card-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   max-width: 595px;
-  height: 380px;
-  padding: 92px 0 0 42px
+  height: clamp(14.375rem, -13.75rem + 125vw, 23.75rem);
+  padding: clamp(3.438rem, -.417rem + 17.13vw, 5.75rem) 0 0 clamp(.875rem, -2.042rem + 12.96vw, 2.625rem)
+}
+
+@media (max-width:420px) {
+  .category__card {
+    background-size: 113%
+  }
 }
 
 .category__card-title {
   font-weight: 500;
-  font-size: clamp(1rem, .767rem + .98vw, 1.375rem);
-  line-height: clamp(1.188rem, .877rem + 1.31vw, 1.688rem);
+  font-size: clamp(1.125rem, .375rem + 3.33vw, 1.375rem);
+  line-height: clamp(1.375rem, .438rem + 4.17vw, 1.688rem);
   text-transform: uppercase;
-  max-width: 196px;
+  max-width: clamp(7.688rem, -6rem + 60.83vw, 12.25rem);
   margin-bottom: clamp(.688rem, .299rem + 1.63vw, 1.313rem)
 }
 
 .category__subtitle {
   font-weight: 400;
-  font-size: clamp(.875rem, .797rem + .33vw, 1rem);
-  line-height: clamp(1.063rem, .985rem + .33vw, 1.188rem);
+  font-size: clamp(.938rem, .75rem + .83vw, 1rem);
+  line-height: clamp(1.063rem, .688rem + 1.67vw, 1.188rem);
   text-transform: uppercase;
   margin-bottom: clamp(.375rem, -.091rem + 1.96vw, 1.125rem)
 }
 
 .category__text {
   font-weight: 300;
-  font-size: clamp(.875rem, .797rem + .33vw, 1rem);
-  line-height: clamp(1.063rem, .985rem + .33vw, 1.188rem);
-  max-width: 196px
+  font-size: clamp(.938rem, .75rem + .83vw, 1rem);
+  line-height: clamp(1.063rem, .688rem + 1.67vw, 1.188rem);
+  max-width: clamp(7.688rem, -6rem + 60.83vw, 12.25rem)
 }
 
 .new {
